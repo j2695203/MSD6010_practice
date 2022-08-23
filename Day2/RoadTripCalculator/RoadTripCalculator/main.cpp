@@ -7,9 +7,6 @@
 //  Goal: Enter three different pieces of information, and compute the cost in dollars of the road trip.
 //
 
-Goal: Enter three different pieces of information, and compute the cost in dollars of the road trip.
-
-
 #include <iostream>
 #include <iomanip>
 using namespace std;
