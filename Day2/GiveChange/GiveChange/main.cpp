@@ -23,11 +23,6 @@ int main() {
     int amount_paid;
     int amount_return;
     
-    int unit_quarter = 25;
-    int unit_dime = 10;
-    int unit_nickel = 5;
-//    int unit_penny = 1;
-    
     int num_quarter;
     int num_dime;
     int num_nickel;
@@ -42,15 +37,15 @@ int main() {
     cout << "Change = " << amount_return << "cents" << endl;
     
     
-    num_quarter = amount_return / unit_quarter;
-    amount_return -= unit_quarter * num_quarter;
+    num_quarter = amount_return / 25;
+    amount_return -= num_quarter * 25;
+    
+    num_dime = amount_return / 10;
+    amount_return -= num_dime * 10;
 
-    num_dime = amount_return / unit_dime;
-    amount_return -= unit_dime * num_dime;
-
-    num_nickel = amount_return / unit_nickel;
-    amount_return -= unit_nickel * num_nickel;
-
+    num_nickel = amount_return / 5;
+    amount_return -= num_nickel * 5;
+    
     num_penny = amount_return;
     
     
