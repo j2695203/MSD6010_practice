@@ -4,6 +4,11 @@
 //
 //  Created by Jinny on 2022/8/23.
 //
+//  Goal: Enter three different pieces of information, and compute the cost in dollars of the road trip.
+//
+
+Goal: Enter three different pieces of information, and compute the cost in dollars of the road trip.
+
 
 #include <iostream>
 #include <iomanip>
