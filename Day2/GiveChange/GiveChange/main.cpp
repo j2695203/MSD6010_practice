@@ -54,6 +54,5 @@ int main() {
     cout << " Nickels:" << num_nickel << endl;
     cout << " Pennies:" << num_penny << endl;
     
-    
     return 0;
 }
