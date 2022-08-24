@@ -47,5 +47,34 @@ int main() {
         cout << "You're part of iKid.\n";
     }
     
+    // SLEEP
+    char weekdayResponse;
+    char holidayResponse;
+    char childResponse;
+    bool isWeekday;
+    bool isHoliday;
+    bool hasChild;
+    
+    cout << "Is it a weekday? (Y/N) \n";
+    cin >> weekdayResponse;
+    cout << "Is it a holiday? (Y/N) \n";
+    cin >> holidayResponse;
+    cout << "Do you have young children? (Y/N) \n";
+    cin >> childResponse;
+    
+    isWeekday = (weekdayResponse == 'Y');
+    isHoliday = (holidayResponse == 'Y');
+    hasChild = (childResponse == 'Y');
+    
+    if ( isWeekday ){
+        cout << "You CAN'T get to sleep in today. \n";
+    }
+    else if ( hasChild ){
+        cout << "You CAN'T get to sleep in today. \n";
+    }
+    else{
+        cout << "You CAN get to sleep in today. \n";
+    }
+    
     return 0;
 }
