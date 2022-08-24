@@ -11,7 +11,7 @@ using namespace std;
 int main() {
     
     // TWO DIFFERENT LOOPS FOR 1-10 ////// For loop is more appropriate when 1~10!
-    
+
     // for loop
     for ( int i=1 ; i<=10 ; i++){
         cout << i << " ";
@@ -28,7 +28,7 @@ int main() {
 
 
     // NUMBERS BETWEEN TWO INPUTS //////
-    
+
     int num_big, num_small;
     int num_check;
 
@@ -49,9 +49,9 @@ int main() {
     }
     cout << endl;
 
-    
+
     // ODD NUMBERS BETWEEN 1-20 //////
-    
+
     // loop+if
     for( int num=1 ; num <= 20 ; num++ ){
         if ( num % 2 == 1 ){
@@ -59,14 +59,14 @@ int main() {
         }
     }
     cout << endl;
-    
+
     // no if
     for( int num=1 ; (num <= 20) && (num % 2 == 1) ; num += 2 ){
         cout << num << " ";
     }
     cout << endl;
     
-
+    
 
     // SUM UP NUMBERS //////
     int numInput = 0;
