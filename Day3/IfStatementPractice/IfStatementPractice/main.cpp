@@ -13,7 +13,7 @@ int main() {
     int age;
     cout << "Enter your age: \n";
     cin >> age;
-    
+
     // AGE TO VOTE (18)
     if ( age < 18 ){
         cout << "You are NOT old enough to vote.\n";
@@ -21,7 +21,7 @@ int main() {
     else{
         cout << "You are old enough to vote.\n";
     }
-    
+
     // AGE TO RUN FOR SENATE (30)
     if ( age < 30 ){
         cout << "You are NOT old enough to run for senate.\n";
@@ -29,7 +29,7 @@ int main() {
     else{
         cout << "You are old enough to run for senate.\n";
     }
-    
+
     // GENERATION
     if ( age >= 80 ){
         cout << "You're part of greatest generation\n.";
@@ -66,10 +66,13 @@ int main() {
     isHoliday = (holidayResponse == 'Y');
     hasChild = (childResponse == 'Y');
     
-    if ( isWeekday ){
+    if (hasChild){
         cout << "You CAN'T get to sleep in today. \n";
     }
-    else if ( hasChild ){
+    else if (isHoliday){
+        cout << "You CAN get to sleep in today. \n";
+    }
+    else if (isWeekday){
         cout << "You CAN'T get to sleep in today. \n";
     }
     else{
