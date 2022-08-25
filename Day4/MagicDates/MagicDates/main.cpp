@@ -48,8 +48,11 @@ int main() {
             cout << mm << "/" << dd << "/" << yyyy << " IS a magic date.\n";
         }
         else{
-            cout << inputDate + " is NOT a magic date.\n";
+            cout << mm << "/" << dd << "/" << yyyy << " is NOT a magic date.\n";
         }
+    }
+    else{
+        cout << "wrong range!\n";
     }
     
     return 0;
