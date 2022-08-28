@@ -17,23 +17,12 @@ float hypotenuse( float a, float b){
 
 double speed_x ( double speed , double angle){
     double speedX = speed * cos(angle);
-    return speedX;
-}
-double speed_y ( double speed , double angle){
-    double speedY = speed * sin(angle);
-    return speedY;
+    return (speedX);
 }
 
-bool isCapitalized(string s){
-    
-    if(s[0]>=65 && s[0]<=90){
-        return(true);
-    }
-    else{
-        return(false);
-    }
-    
-    
+double speed_y ( double speed , double angle){
+    double speedY = speed * sin(angle);
+    return (speedY);
 }
 
 //double speedXY( double speed, double angle){
@@ -43,9 +32,42 @@ bool isCapitalized(string s){
 //    return arr[];
 //}
 
+bool isCapitalized(string s){
+    if(s[0]>=65 && s[0]<=90){
+        return(true);
+    }
+    else{
+        return(false);
+    }
+}
+
+string boolToString(bool captialResult){
+    if(captialResult){
+        return "true";
+    }
+    else{
+        return "false";
+    }
+}
+
+bool isPrime(int numberInput){
+    int divisor = 0;
+    for ( int i=1; i<=numberInput ; i++){
+        if (numberInput % i == 0){
+            divisor += 1;
+        }
+    }
+    if (divisor == 2){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 
 int main() {
+    
     // PART 1 (A) //////
     float sideA;
     float sideB;
@@ -55,7 +77,7 @@ int main() {
     cin >> sideA >> sideB;
 
     sideC = hypotenuse( sideA , sideB );
-    // don't get input from cin caused the input parameter should be the right type float first
+    // don't get input from cin because the input parameter should be the right type float first
 
     cout << "The length of the hypotenuse: \n" << sideC << endl;
 
@@ -65,7 +87,7 @@ int main() {
     double angle;
     double speedX;
     double speedY;
-    cout << "Enter the speed: \n";
+    cout << "Enter the speed and angle: \n";
     cin >> speed >> angle;
 
     speedX = speed * cos(angle);
@@ -74,6 +96,7 @@ int main() {
     cout << "x velocity:" << speedX << endl;
     cout << "y velocity:" << speedY << endl;
     // hard to turn into a function because there are two values needed to be return, but function can return one value. Maybe return an array then read values in array?
+
     // PART 1 (B) WITH FUNCTIONS //////
     double speedXX;
     double speedYY;
@@ -90,18 +113,33 @@ int main() {
                   << result << " seconds since the Epoch\n";
     // functions being called: time(), asctime(), localtime()
 
-    
-    // PART 2 //////
+
+    // PART 2 CAPITAL//////
     string stringInput;
     cout << "Enter a string: \n";
     cin >> stringInput;
-//    if (isCapitalized){
-//        cout << "string starts with a capital letter";
-//    }
-//    else{
-//        cout << "string DOESN'T start with a capital letter";
-//    }
+
+
+    if (isCapitalized(stringInput)){
+        cout << stringInput << " starts with a capital letter. \n";
+    }
+    else{
+        cout << stringInput << " DOESN'T start with a capital letter. \n";
+    }
+    cout << boolToString (isCapitalized(stringInput)) << endl;
     
+    
+    // PART 2 PRIME //////
+    int numberInput;
+    cout << "Enter a number: \n";
+    cin >> numberInput;
+    
+    if (isPrime(numberInput)){
+        cout << numberInput << " is a prime number. \n";
+    }
+    else{
+        cout << numberInput << " is NOT a prime number. \n";
+    }
     
 }
 
