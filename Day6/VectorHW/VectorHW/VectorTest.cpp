@@ -46,6 +46,7 @@ int main()
     
     vector<int> v3 = {-2, 0, 3, 3, 5}; // ascending w/ some same number inside
     vector<int> v4 = {1, 1, 1, 1, 1}; // ascending w/ all same number inside
+    vector<int> v5 = {-1, -2, -3, -4, -5};
   
     /*
     * Contains tests
@@ -170,6 +171,12 @@ int main()
       ErrorExit( "Average() - test 5" );
     }
     
+    // v5 avg is -3, so this should return false
+//    std::cout << Average(v5) << std::endl;
+    if( Average(v5) != -3 ) {
+      ErrorExit( "Average() - test 6" );
+    }
+    
     /*
      * IsSorted tests
      */
@@ -193,6 +200,12 @@ int main()
     if( !IsSorted(v4) ) {
       ErrorExit( "IsSorted() - test 4" );
     }
+    
+    // v5 is not sorted ascending, so this should return false
+    if( IsSorted(v5) ) {
+      ErrorExit( "IsSorted() - test 5" );
+    }
+    
   
 
   // Since any failed test exits the program, if we made it this far, we passed all tests.

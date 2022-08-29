@@ -95,13 +95,13 @@ int FindMax( vector<int> input )
  * Returns:
  *   The (integer) average of all values in the vector
  */
-int Average( vector<int> input )
+int Average( vector<int> input ) // why use int would fail?
 {
-    int total = 0;
+    float total = 0;
     for (int i=0 ; i< input.size() ; i++){
         total += input[i];
     }
-    int avg = total / input.size();
+    float avg = total / input.size();
     return avg;
 }
 
@@ -133,6 +133,7 @@ bool IsSorted( vector<int> input )
         if ( input[i] < minCheck ){
             return false;
         }
+        minCheck = input[i];
     }
     return true;
 }
