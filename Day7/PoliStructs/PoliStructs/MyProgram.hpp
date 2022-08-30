@@ -12,15 +12,14 @@
 #include <string>
 using namespace std;
 
-struct Polician{
+struct Politician{
     string name;
     string party; //republican or democratic
     string stateOrFederal; // state or federal
     string JavaOrCplus; //javacans or cplusers
 };
 
-bool Javacans(Polician policians);
-
-bool federalCplusers(Polician policians);
+vector<Politician> Javacans(vector<Politician>politiciansList);
+vector<Politician> Cplusers(vector<Politician>politiciansList);
 
 #endif /* MyProgram_hpp */

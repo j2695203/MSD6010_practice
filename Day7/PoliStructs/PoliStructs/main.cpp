@@ -7,20 +7,28 @@
 
 #include <iostream>
 #include "MyProgram.hpp"
+#include <vector>
 using namespace std;
 
 int main() {
 
-    Polician Adam{"Adam", "republican", "state", "javacans"};
-    Polician Ben{"Ben", "republican", "federal", "javacans"};
-    Polician Cyan{"Cyan", "democratic", "federal", "cplusers"};
-    Polician Dav{"Dav", "depublican", "state", "cplusers"};
+    Politician Adam{"Adam", "republican", "state", "javacans"};
+    Politician Ben{"Ben", "republican", "federal", "javacans"};
+    Politician Cyan{"Cyan", "democratic", "federal", "cplusers"};
+    Politician Dav{"Dav", "depublican", "state", "cplusers"};
     
-    assert(Javacans(Adam));
-    assert(!Javacans(Cyan));
-    assert(!federalCplusers(Ben));
-    assert(!federalCplusers(Dav));
-    assert(federalCplusers(Cyan));
+    vector<Politician> politiciansList;
+    politiciansList.push_back(Adam);
+    politiciansList.push_back(Ben);
+    politiciansList.push_back(Cyan);
+    politiciansList.push_back(Dav);
+
+    vector<Politician> javacansList = Javacans(politiciansList);
+    vector<Politician> cplusersList = Cplusers(politiciansList);
+    
+    assert(javacansList[0].name == "Adam");
+    assert(javacansList[1].name == "Ben");
+    assert(cplusersList[0].name == "Cyan");
     
     return 0;
 }
