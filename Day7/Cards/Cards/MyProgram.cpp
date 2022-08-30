@@ -12,10 +12,15 @@ using namespace std;
 
 // create a deck of card and save all representation
 vector<Card> create(){
+    
+    // the card I have
     vector<Card> card;
+    
+    // element need to be add in each card
     vector<string> suit{"Spd","Hrt","Dmd","Clb"};
     vector<string> letter{"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
     
+    // fill in 3 elements in all card
     for(string el: suit){
         for( int i = 1; i <= 13; i++){
             card.push_back( (Card) { el, i, letter [i-1] } );
