@@ -12,11 +12,7 @@
  Full House:  1428 (0.1428%)
  Flush:  1971 (0.1971%)
  Straight:  3876 (0.3876%)
- 
  */
-
-
-
 
 #include <iostream>
 #include "MyProgram.hpp"
@@ -37,6 +33,7 @@ int main() {
         
         shuffleDeck(newDeck); // shuffle card
         takeCard=fiveCard(newDeck); // take 5 cards
+        sortCard(takeCard);
 
         if (isRoyalFlush(takeCard)){
             countRoyalFlush++;
