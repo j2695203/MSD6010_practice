@@ -45,6 +45,13 @@ int main() {
     assert( StringToVec(s1)[7] == '!');
     assert( reverse(v1)[0] == -1);
     assert( reverse(v1)[5] == 1);
+    
+    //for each loop to print out value and position
+    int pos = 0;
+    for(int numV1: v1){
+        cout << numV1 << " pos:" << pos << endl;
+        pos++;
+    }
   
     return 0;
 }

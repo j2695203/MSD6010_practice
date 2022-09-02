@@ -27,17 +27,12 @@
  */
 bool Contains( vector<int> input, int lookFor )
 {
-    int count = 0;
     for (int i=0 ; i< input.size() ; i++){
         if ( input[i] == lookFor){
-            count++;
+            return true;
         }
     }
-    if ( count > 0 ){
-        return true;
-    }else{
-        return false;
-    }
+    return false;
 }
 
 /*
@@ -55,7 +50,7 @@ int FindMin( vector<int> input )
 {
     int min = input[0];
     for (int i=1 ; i< input.size() ; i++){
-        if ( input[i] <= min){
+        if ( input[i] < min){
             min = input[i];
         }
     }
@@ -77,7 +72,7 @@ int FindMax( vector<int> input )
 {
     int max = input[0];
     for (int i=1 ; i< input.size() ; i++){
-        if ( input[i] >= max){
+        if ( input[i] > max){
             max = input[i];
         }
     }
@@ -101,7 +96,7 @@ int Average( vector<int> input ) // why use int would fail?
     for (int i=0 ; i< input.size() ; i++){
         total += input[i];
     }
-    float avg = total / input.size();
+    int avg = total / input.size();
     return avg;
 }
 
@@ -128,12 +123,10 @@ int Average( vector<int> input ) // why use int would fail?
  */
 bool IsSorted( vector<int> input )
 {
-    int minCheck = input[0];
     for (int i=1 ; i< input.size() ; i++){
-        if ( input[i] < minCheck ){
+        if ( input[i] < input[i-1] ){
             return false;
         }
-        minCheck = input[i];
     }
     return true;
 }

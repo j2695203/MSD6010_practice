@@ -17,7 +17,7 @@ vector<Word> getWord(string filename){
     // fail to open files
     if(myStream.fail()){
         cout << "Failed to open file. \n" ;
-//        exit(1); // ??
+        exit(1); // ??
     }
     // Get one word at a time automatically
     string singleWord;

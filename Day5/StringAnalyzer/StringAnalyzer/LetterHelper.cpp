@@ -24,7 +24,7 @@ bool isTerminator(char c){
     }
 }
 bool isPunctuation(char c){
-    if ( c == '.' || c == '!' || c == '?' || c == ','){
+    if ( c == '.' || c == '!' || c == '?' || c == ',' || c == ';'){
         return true;
     }
     else{
@@ -44,10 +44,11 @@ bool isVowel(char c){
     }
 }
 bool isConsonant(char c){
-    if ( isPunctuation(c) || isVowel(c) || isSpace(c) ){
-        return false;
+    // if (c>='A' && c<='z' && !isVowel(c))
+    if ( c>='A' && c<='z' && !isVowel(c)){
+        return true;
     }
     else{
-        return true;
+        return false;
     }
 }

@@ -111,6 +111,11 @@ int main()
       ErrorExit( "FindMin() - test 5" );
     }
     
+    // v5 min number is -5, so this should return false
+    if( FindMin(v5) != -5 ) {
+      ErrorExit( "FindMin() - test 5.5" );
+    }
+    
     
     /*
      * FindMax tests
@@ -205,8 +210,6 @@ int main()
     if( IsSorted(v5) ) {
       ErrorExit( "IsSorted() - test 5" );
     }
-    
-  
 
   // Since any failed test exits the program, if we made it this far, we passed all tests.
   std::cout << "All tests passed!\n";

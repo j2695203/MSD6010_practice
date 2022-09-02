@@ -21,6 +21,31 @@ struct Card{
 
 vector<Card> create();
 
-void printCard(vector<Card>);
+void printCard(const vector<Card>& card);
+
+void shuffleDeck(vector<Card>& deck);
+
+void swapCard(Card& a, Card& b);
+
+vector<Card> fiveCard(vector<Card> deck);
+
+bool isFlush(const vector<Card>& fiveCard);
+
+bool isStraight(const vector<Card>& fiveCard);
+
+bool isStraightFlush(const vector<Card>& fiveCard);
+
+bool isRoyalFlush(const vector<Card>& fiveCard);
+
+bool isFullHouse(const vector<Card>& fiveCard);
+
+bool minIsAceTen(const vector<Card>& fiveCard);
+
+void sortCard(vector<Card>& fiveCard);
+
+void testStraight(vector<Card>& testCard);
+void testFlush(vector<Card>& testCard);
+void testFullHouse(vector<Card>& testCard);
 
 #endif /* MyProgram_hpp */
+
