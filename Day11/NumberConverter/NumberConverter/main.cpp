@@ -13,8 +13,8 @@ using namespace std;
 
 int main() {
     int numericalValue;
-    numericalValue = stringToInt("232",10);
-    cout << numericalValue << "\n";
+    numericalValue = stringToInt("F00D",16);
+//    cout << numericalValue << "\n";
     cout << intToDecimalString(numericalValue) << " (decimal)" << "\n";
     cout << intToBinaryString(numericalValue) << " (binary)" << "\n";
     cout << intToHexadecimalString(numericalValue) << " (hexadecimal)" <<"\n";
