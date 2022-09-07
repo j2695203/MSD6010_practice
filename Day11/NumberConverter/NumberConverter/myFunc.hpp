@@ -10,12 +10,10 @@
 
 #include <stdio.h>
 #include <string>
-using namespace std;
-
 
 int stringToInt( std::string , int );
-string intToDecimalString( int );
-string intToHexadecimalString( int );
-string intToBinaryString( int );
+std::string intToDecimalString( int );
+std::string intToHexadecimalString( int );
+std::string intToBinaryString( int );
 
 #endif /* myFunc_hpp */

@@ -6,35 +6,33 @@
 //
 
 #include "myFunc.hpp"
-#include <math.h>
-#include <string>
-#include <cctype>
-#include <algorithm>
 #include <iostream>
-using namespace std;
+#include <math.h>
+//#include <string>
+//using namespace std;
 
 /*
  convert string to integer based on 2, 10, 16 bases
  */
-int stringToInt( string stringInput, int base){
-    int numericValue = 0;
+int stringToInt( std::string stringInput, int base){
+    int numericValue;
     int totalValue = 0;
-    bool minus = false;
+    bool minusCheck = false;
     
     // erase '-' first and record
     if(stringInput[0] == '-'){
         stringInput.erase(0,1);
-        minus = true;
+        minusCheck = true;
     }
     
-    // for decimal input
+    // for decimal input (assume user entered a valid number)
     if (base == 10){
         for (int i = 0; i < stringInput.length(); i++){
             numericValue = stringInput[i]-'0';
-            totalValue += numericValue * pow(10, stringInput.length()-i-1);
+            totalValue += numericValue * pow(10, stringInput.length()-i-1 );
         }
     }
-    // for binary input
+    // for binary input (assume user entered a valid number)
     else if (base == 2){
         for (int i = 0; i < stringInput.length(); i++){
             numericValue = stringInput[i]-'0';
@@ -52,20 +50,20 @@ int stringToInt( string stringInput, int base){
                 numericValue = stringInput[i] - 'a' + 10;
             }
             else{
-                cout << "not available input for hexadecimal base \n";
+                std::cout << "Not available input for hexadecimal digit. \n";
                 exit(0);
             }
             totalValue += numericValue * pow(16, stringInput.length()-i-1 );
         }
     }
-    // for input other than 2, 10, 16
+    // for base other than 2, 10, 16
     else{
-        cout << "not available base \n";
+        std::cout << "Not available base. \n";
         exit(1);
     }
     
     // add minus symbol back
-    if (minus){
+    if (minusCheck){
         return totalValue * -1;
     }
     else{
@@ -76,32 +74,33 @@ int stringToInt( string stringInput, int base){
 /*
  convert integer (decimal) to Decimal string
  */
-string intToDecimalString( int numerical){
-    string decimalString;
-    return ( to_string(numerical) );
+std::string intToDecimalString( int numerical){
+    std::string decimalString;
+    return ( std::to_string(numerical) );
 }
 
 /*
  convert integer (decimal) to Binary string
  */
-string intToBinaryString( int numerical){
-    string binaryString;
-    bool minus = false;
+std::string intToBinaryString( int numerical){
+    std::string binaryString;
+    // check whether it is negative
+    bool minusCheck = false;
     if (numerical < 0){
-        numerical *= -1;
-        minus = true;
+        minusCheck = true;
     }
-    while(numerical > 0){
-        if( numerical % 2 == 1){
-            binaryString += '1';
+    // convert to 0 or 1
+    while( abs(numerical) > 0){
+        if( abs(numerical) % 2 == 1){
+            binaryString = '1' + binaryString;
         }
         else{
-            binaryString += '0';
+            binaryString = '0' + binaryString;
         }
         numerical /= 2;
     }
-    reverse(binaryString.rbegin(),binaryString.rend());
-    if ( minus ){
+    // return positve or negative
+    if ( minusCheck ){
         return ( "-" + binaryString);
     }
     return binaryString;
@@ -110,25 +109,25 @@ string intToBinaryString( int numerical){
 /*
  convert integer (decimal) to Hexadecimal string
  */
-string intToHexadecimalString( int numerical){
-    string hexString;
-    bool minus = false;
+std::string intToHexadecimalString( int numerical){
+    std::string hexString;
+    // check whether it is negative
+    bool minusCheck = false;
     if (numerical < 0){
-        numerical *= -1;
-        minus = true;
+        minusCheck = true;
     }
-    
-    while(numerical > 0){
-        if( numerical % 16 >= 0 && numerical % 16 <= 9){
-            hexString += to_string(numerical % 16);
+    // convertation
+    while( abs(numerical) > 0){
+        if( abs(numerical) % 16 >= 0 && abs(numerical) % 16 <= 9){
+            hexString = std::to_string( abs(numerical) % 16) + hexString;
         }
         else{
-            hexString += char (numerical % 16 - 10 + 'A');
+            hexString = char ( abs(numerical) % 16 - 10 + 'A') + hexString;
         }
         numerical /= 16;
     }
-    reverse(hexString.rbegin(),hexString.rend());
-    if ( minus ){
+    // return positive or negative
+    if ( minusCheck ){
         return ("-" + hexString);
     }
     else{

@@ -7,17 +7,22 @@
 
 #include <iostream>
 #include "myFunc.hpp"
-#include <math.h>
-#include <string>
-using namespace std;
+//using namespace std;
 
 int main() {
-    int numericalValue;
-    numericalValue = stringToInt("F00D",16);
-//    cout << numericalValue << "\n";
-    cout << intToDecimalString(numericalValue) << " (decimal)" << "\n";
-    cout << intToBinaryString(numericalValue) << " (binary)" << "\n";
-    cout << intToHexadecimalString(numericalValue) << " (hexadecimal)" <<"\n";
+    std::string inputString;
+    int inputSystem;
+    
+    // input
+    std::cout << "Enter numbers and digit system:\n";
+    std::cin >> inputString >> inputSystem;
+    int numericalValue = stringToInt(inputString, inputSystem);
+    
+    // result
+    std::cout << "\nConverting result: \n";
+    std::cout << " "<< intToDecimalString(numericalValue) << " (decimal)" << "\n";
+    std::cout << " "<< intToBinaryString(numericalValue) << " (binary)" << "\n";
+    std::cout << " "<< intToHexadecimalString(numericalValue) << " (hexadecimal)" <<"\n";
 
     return 0;
 }
