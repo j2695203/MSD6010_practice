@@ -12,7 +12,7 @@ int main() {
     
     string inputDate;
     int posSlash;
-    string splitDate[3]; // why [2] will alarm with size error?
+    string splitDate[3]; // why [2] will alarm with size error? it's size!
     
     cout << "Enter a date (mm/dd/yyyy): \n";
     cin >> inputDate;

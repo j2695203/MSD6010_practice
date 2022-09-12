@@ -12,12 +12,13 @@
 #include <fstream>
 using namespace std;
 
+// open file, save all words in vector
 vector<Word> getWord(string filename){
     ifstream myStream(filename);  
     // fail to open files
     if(myStream.fail()){
         cout << "Failed to open file. \n" ;
-        exit(1); // ??
+        exit(1); 
     }
     // Get one word at a time automatically
     string singleWord;
@@ -32,7 +33,7 @@ vector<Word> getWord(string filename){
 }
 
 
-BookInfo getInfo(vector<Word> allWords){
+BookInfo getInfo(vector<Word>& allWords){
     // search title, author pos
     int titlePos = 0;
     int authorPos = 0;
@@ -75,7 +76,7 @@ BookInfo getInfo(vector<Word> allWords){
 }
 
 
-int sumChar(vector<Word> allWords){
+int sumChar(vector<Word>& allWords){
     int sum = 0;
     for (Word el: allWords){
         sum += el.numChar;
@@ -83,7 +84,7 @@ int sumChar(vector<Word> allWords){
     return sum;
 }
 
-string shortWord(vector<Word> allWords){
+string shortWord(vector<Word>& allWords){
     string shortCheck;
     int charCheck = allWords[0].numChar;
     for(Word el: allWords){
@@ -95,7 +96,7 @@ string shortWord(vector<Word> allWords){
     return shortCheck;
 }
 
-string longWord(vector<Word> allWords){
+string longWord(vector<Word>& allWords){
     string longCheck;
     int charCheck = allWords[0].numChar;
     for(Word el: allWords){
@@ -107,17 +108,17 @@ string longWord(vector<Word> allWords){
     return longCheck;
 }
 
-void search(string wordInput,vector<Word> allWords){
+void search(string wordInput,vector<Word>& allWords){
     
     int count = 0;
     int pos;
     for (int i = 0; i < allWords.size() ; i++ ){
         if ( allWords[i].word == wordInput){
-            pos = posInChar(i, allWords);
+            pos = posInChar(i, allWords); // the word's position
             count++;
-            if (i == 0){
+            if (i == 0){  // the first word
                 cout << " at "<< pos <<"%: \"" << allWords[i].word + " " + allWords[i+1].word + "\"\n";
-            }else if( i == allWords.size()-1){
+            }else if( i == allWords.size()-1){  // the last word
                 cout << " at "<< pos <<"%: \"" << allWords[i-1].word + " " + allWords[i].word + "\"\n";
             }else{
                 cout << " at "<< pos <<"%: \"" << allWords[i-1].word + " " + allWords[i].word + " " + allWords[i+1].word + "\"\n";
@@ -128,8 +129,8 @@ void search(string wordInput,vector<Word> allWords){
 }
 
 // estimate the position of a word (using characters)
-int posInChar(int posInWord,vector<Word> allWords){
-    int frontChar = 0;
+int posInChar(int posInWord,vector<Word>& allWords){
+    int frontChar = 0; // all characters before the word
     for (int i = 0 ; i < posInWord ; i++){
         frontChar += allWords[i].numChar;
     }

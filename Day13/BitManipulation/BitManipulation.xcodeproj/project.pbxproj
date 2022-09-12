@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3BB1EB2D28BF054D006047CA /* MyProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BB1EB2B28BF054D006047CA /* MyProgram.cpp */; };
-		3BC0BD2828BF029000673BEE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BC0BD2728BF029000673BEE /* main.cpp */; };
+		3BADA98328CD3F8800254AFB /* bits.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BADA98228CD3F8800254AFB /* bits.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3BC0BD2228BF029000673BEE /* CopyFiles */ = {
+		3BADA97628CD3F5400254AFB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,14 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3BB1EB2B28BF054D006047CA /* MyProgram.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyProgram.cpp; path = ../../../Day7/Cards/Cards/MyProgram.cpp; sourceTree = "<group>"; };
-		3BB1EB2C28BF054D006047CA /* MyProgram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = MyProgram.hpp; path = ../../../Day7/Cards/Cards/MyProgram.hpp; sourceTree = "<group>"; };
-		3BC0BD2428BF029000673BEE /* Poker */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Poker; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BC0BD2728BF029000673BEE /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3BADA97828CD3F5400254AFB /* BitManipulation */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BitManipulation; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BADA98228CD3F8800254AFB /* bits.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bits.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3BC0BD2128BF029000673BEE /* Frameworks */ = {
+		3BADA97528CD3F5400254AFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,67 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3BC0BD1B28BF029000673BEE = {
+		3BADA96F28CD3F5400254AFB = {
 			isa = PBXGroup;
 			children = (
-				3BC0BD2628BF029000673BEE /* Poker */,
-				3BC0BD2528BF029000673BEE /* Products */,
+				3BADA97A28CD3F5400254AFB /* BitManipulation */,
+				3BADA97928CD3F5400254AFB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3BC0BD2528BF029000673BEE /* Products */ = {
+		3BADA97928CD3F5400254AFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3BC0BD2428BF029000673BEE /* Poker */,
+				3BADA97828CD3F5400254AFB /* BitManipulation */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3BC0BD2628BF029000673BEE /* Poker */ = {
+		3BADA97A28CD3F5400254AFB /* BitManipulation */ = {
 			isa = PBXGroup;
 			children = (
-				3BC0BD2728BF029000673BEE /* main.cpp */,
-				3BB1EB2B28BF054D006047CA /* MyProgram.cpp */,
-				3BB1EB2C28BF054D006047CA /* MyProgram.hpp */,
+				3BADA98228CD3F8800254AFB /* bits.cpp */,
 			);
-			path = Poker;
+			path = BitManipulation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3BC0BD2328BF029000673BEE /* Poker */ = {
+		3BADA97728CD3F5400254AFB /* BitManipulation */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BC0BD2B28BF029000673BEE /* Build configuration list for PBXNativeTarget "Poker" */;
+			buildConfigurationList = 3BADA97F28CD3F5400254AFB /* Build configuration list for PBXNativeTarget "BitManipulation" */;
 			buildPhases = (
-				3BC0BD2028BF029000673BEE /* Sources */,
-				3BC0BD2128BF029000673BEE /* Frameworks */,
-				3BC0BD2228BF029000673BEE /* CopyFiles */,
+				3BADA97428CD3F5400254AFB /* Sources */,
+				3BADA97528CD3F5400254AFB /* Frameworks */,
+				3BADA97628CD3F5400254AFB /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Poker;
-			productName = Poker;
-			productReference = 3BC0BD2428BF029000673BEE /* Poker */;
+			name = BitManipulation;
+			productName = BitManipulation;
+			productReference = 3BADA97828CD3F5400254AFB /* BitManipulation */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3BC0BD1C28BF029000673BEE /* Project object */ = {
+		3BADA97028CD3F5400254AFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					3BC0BD2328BF029000673BEE = {
+					3BADA97728CD3F5400254AFB = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 3BC0BD1F28BF029000673BEE /* Build configuration list for PBXProject "Poker" */;
+			buildConfigurationList = 3BADA97328CD3F5400254AFB /* Build configuration list for PBXProject "BitManipulation" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,30 +104,29 @@
 				en,
 				Base,
 			);
-			mainGroup = 3BC0BD1B28BF029000673BEE;
-			productRefGroup = 3BC0BD2528BF029000673BEE /* Products */;
+			mainGroup = 3BADA96F28CD3F5400254AFB;
+			productRefGroup = 3BADA97928CD3F5400254AFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BC0BD2328BF029000673BEE /* Poker */,
+				3BADA97728CD3F5400254AFB /* BitManipulation */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3BC0BD2028BF029000673BEE /* Sources */ = {
+		3BADA97428CD3F5400254AFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BB1EB2D28BF054D006047CA /* MyProgram.cpp in Sources */,
-				3BC0BD2828BF029000673BEE /* main.cpp in Sources */,
+				3BADA98328CD3F8800254AFB /* bits.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3BC0BD2928BF029000673BEE /* Debug */ = {
+		3BADA97D28CD3F5400254AFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -190,7 +184,7 @@
 			};
 			name = Debug;
 		};
-		3BC0BD2A28BF029000673BEE /* Release */ = {
+		3BADA97E28CD3F5400254AFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -241,22 +235,18 @@
 			};
 			name = Release;
 		};
-		3BC0BD2C28BF029000673BEE /* Debug */ = {
+		3BADA98028CD3F5400254AFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		3BC0BD2D28BF029000673BEE /* Release */ = {
+		3BADA98128CD3F5400254AFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -264,25 +254,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BC0BD1F28BF029000673BEE /* Build configuration list for PBXProject "Poker" */ = {
+		3BADA97328CD3F5400254AFB /* Build configuration list for PBXProject "BitManipulation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BC0BD2928BF029000673BEE /* Debug */,
-				3BC0BD2A28BF029000673BEE /* Release */,
+				3BADA97D28CD3F5400254AFB /* Debug */,
+				3BADA97E28CD3F5400254AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BC0BD2B28BF029000673BEE /* Build configuration list for PBXNativeTarget "Poker" */ = {
+		3BADA97F28CD3F5400254AFB /* Build configuration list for PBXNativeTarget "BitManipulation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BC0BD2C28BF029000673BEE /* Debug */,
-				3BC0BD2D28BF029000673BEE /* Release */,
+				3BADA98028CD3F5400254AFB /* Debug */,
+				3BADA98128CD3F5400254AFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3BC0BD1C28BF029000673BEE /* Project object */;
+	rootObject = 3BADA97028CD3F5400254AFB /* Project object */;
 }

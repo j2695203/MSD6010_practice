@@ -30,7 +30,7 @@ int main() {
     
     cout << "Enter item price in cents:" << endl;
     cin >> item_price;
-    cout << "Enger amount paid in cents:" << endl;
+    cout << "Enter amount paid in cents:" << endl;
     cin >> amount_paid;
     
     amount_return = amount_paid - item_price;
