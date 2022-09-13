@@ -62,7 +62,7 @@ bool IsNegative( int input )
     x = x >> 31;
     return (x == 1);
 //  Another Way:
-//    int mask = -pow(2,31);
+//    int mask = -pow(2,31); // 1000...0000
 //    input = input&mask;
 //    return (input == mask);
 }
