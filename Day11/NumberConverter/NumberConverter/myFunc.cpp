@@ -28,7 +28,7 @@ int stringToInt( std::string stringInput, int base){
     // for decimal input (assume user entered a valid number)
     if (base == 10){
         for (int i = 0; i < stringInput.length(); i++){
-            numericValue = stringInput[i]-'0';
+            numericValue = stringInput[i]-'0'; // convert to interger
             totalValue += numericValue * pow(10, stringInput.length()-i-1 );
         }
     }

@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3BC9926428CF999F003A42D0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3BC9926328CF999F003A42D0 /* main.cpp */; };
+		3B1A6EEA28D0FAB000CCFC17 /* MyFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B1A6EE828D0FAB000CCFC17 /* MyFunc.cpp */; };
+		3B9FC41E28D0F7DB00390865 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3B9FC41D28D0F7DB00390865 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3BC9925E28CF999F003A42D0 /* CopyFiles */ = {
+		3B9FC41828D0F7DB00390865 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,12 +24,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3BC9926028CF999F003A42D0 /* PointerPrac */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PointerPrac; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BC9926328CF999F003A42D0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		3B1A6EE828D0FAB000CCFC17 /* MyFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MyFunc.cpp; sourceTree = "<group>"; };
+		3B1A6EE928D0FAB000CCFC17 /* MyFunc.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MyFunc.hpp; sourceTree = "<group>"; };
+		3B9FC41A28D0F7DB00390865 /* DiyVector */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DiyVector; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B9FC41D28D0F7DB00390865 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3BC9925D28CF999F003A42D0 /* Frameworks */ = {
+		3B9FC41728D0F7DB00390865 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,65 +41,67 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3BC9925728CF999F003A42D0 = {
+		3B9FC41128D0F7DB00390865 = {
 			isa = PBXGroup;
 			children = (
-				3BC9926228CF999F003A42D0 /* PointerPrac */,
-				3BC9926128CF999F003A42D0 /* Products */,
+				3B9FC41C28D0F7DB00390865 /* DiyVector */,
+				3B9FC41B28D0F7DB00390865 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		3BC9926128CF999F003A42D0 /* Products */ = {
+		3B9FC41B28D0F7DB00390865 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9926028CF999F003A42D0 /* PointerPrac */,
+				3B9FC41A28D0F7DB00390865 /* DiyVector */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3BC9926228CF999F003A42D0 /* PointerPrac */ = {
+		3B9FC41C28D0F7DB00390865 /* DiyVector */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9926328CF999F003A42D0 /* main.cpp */,
+				3B9FC41D28D0F7DB00390865 /* main.cpp */,
+				3B1A6EE828D0FAB000CCFC17 /* MyFunc.cpp */,
+				3B1A6EE928D0FAB000CCFC17 /* MyFunc.hpp */,
 			);
-			path = PointerPrac;
+			path = DiyVector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3BC9925F28CF999F003A42D0 /* PointerPrac */ = {
+		3B9FC41928D0F7DB00390865 /* DiyVector */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3BC9926728CF999F003A42D0 /* Build configuration list for PBXNativeTarget "PointerPrac" */;
+			buildConfigurationList = 3B9FC42128D0F7DB00390865 /* Build configuration list for PBXNativeTarget "DiyVector" */;
 			buildPhases = (
-				3BC9925C28CF999F003A42D0 /* Sources */,
-				3BC9925D28CF999F003A42D0 /* Frameworks */,
-				3BC9925E28CF999F003A42D0 /* CopyFiles */,
+				3B9FC41628D0F7DB00390865 /* Sources */,
+				3B9FC41728D0F7DB00390865 /* Frameworks */,
+				3B9FC41828D0F7DB00390865 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PointerPrac;
-			productName = PointerPrac;
-			productReference = 3BC9926028CF999F003A42D0 /* PointerPrac */;
+			name = DiyVector;
+			productName = DiyVector;
+			productReference = 3B9FC41A28D0F7DB00390865 /* DiyVector */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3BC9925828CF999F003A42D0 /* Project object */ = {
+		3B9FC41228D0F7DB00390865 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
-					3BC9925F28CF999F003A42D0 = {
+					3B9FC41928D0F7DB00390865 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
 				};
 			};
-			buildConfigurationList = 3BC9925B28CF999F003A42D0 /* Build configuration list for PBXProject "PointerPrac" */;
+			buildConfigurationList = 3B9FC41528D0F7DB00390865 /* Build configuration list for PBXProject "DiyVector" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,29 +109,30 @@
 				en,
 				Base,
 			);
-			mainGroup = 3BC9925728CF999F003A42D0;
-			productRefGroup = 3BC9926128CF999F003A42D0 /* Products */;
+			mainGroup = 3B9FC41128D0F7DB00390865;
+			productRefGroup = 3B9FC41B28D0F7DB00390865 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3BC9925F28CF999F003A42D0 /* PointerPrac */,
+				3B9FC41928D0F7DB00390865 /* DiyVector */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3BC9925C28CF999F003A42D0 /* Sources */ = {
+		3B9FC41628D0F7DB00390865 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC9926428CF999F003A42D0 /* main.cpp in Sources */,
+				3B9FC41E28D0F7DB00390865 /* main.cpp in Sources */,
+				3B1A6EEA28D0FAB000CCFC17 /* MyFunc.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		3BC9926528CF999F003A42D0 /* Debug */ = {
+		3B9FC41F28D0F7DB00390865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -184,7 +190,7 @@
 			};
 			name = Debug;
 		};
-		3BC9926628CF999F003A42D0 /* Release */ = {
+		3B9FC42028D0F7DB00390865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -235,7 +241,7 @@
 			};
 			name = Release;
 		};
-		3BC9926828CF999F003A42D0 /* Debug */ = {
+		3B9FC42228D0F7DB00390865 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -243,7 +249,7 @@
 			};
 			name = Debug;
 		};
-		3BC9926928CF999F003A42D0 /* Release */ = {
+		3B9FC42328D0F7DB00390865 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -254,25 +260,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3BC9925B28CF999F003A42D0 /* Build configuration list for PBXProject "PointerPrac" */ = {
+		3B9FC41528D0F7DB00390865 /* Build configuration list for PBXProject "DiyVector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BC9926528CF999F003A42D0 /* Debug */,
-				3BC9926628CF999F003A42D0 /* Release */,
+				3B9FC41F28D0F7DB00390865 /* Debug */,
+				3B9FC42028D0F7DB00390865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3BC9926728CF999F003A42D0 /* Build configuration list for PBXNativeTarget "PointerPrac" */ = {
+		3B9FC42128D0F7DB00390865 /* Build configuration list for PBXNativeTarget "DiyVector" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3BC9926828CF999F003A42D0 /* Debug */,
-				3BC9926928CF999F003A42D0 /* Release */,
+				3B9FC42228D0F7DB00390865 /* Debug */,
+				3B9FC42328D0F7DB00390865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3BC9925828CF999F003A42D0 /* Project object */;
+	rootObject = 3B9FC41228D0F7DB00390865 /* Project object */;
 }
