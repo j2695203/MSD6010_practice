@@ -10,31 +10,33 @@
 
 #include <stdio.h>
 
-struct MyVector{
+class MyVector{
+private:
     int* data;
     size_t capacity;
     size_t size;
+public:
+    // constructor
+    MyVector(size_t initialCapacity);
+    // methods
+    void freeVector();
+    void pushBack(int);
+    void popBack();
+    int get(int index);
+    void set(int index, int newValue);
+    void growVector();
+    size_t getSize() {
+        return size;
+    }
+    size_t getCapacity(){
+        return capacity;
+    }
+    int* getData(){
+        return data;
+    }
 };
 
-// should return a vector with the given capacity and a size of 0
-MyVector makeVector( size_t initialCapacity);
-// should deallocate any heap memory used by the MyVector object
-void freeVector(MyVector);
-// only data, void??
-void pushBack(MyVector& v1, int);
-void popBack(MyVector& v1);
-
-//return the appropriate value in the vector. This should work like [] does for std::vectors
-int get(MyVector& v1, int index);
-
-// set the appropriate value in the vector. This should work like [] for std::vector when they're on the left of an equals sign (vec[3] = 10;).
-void set(MyVector& v1, int index, int newValue);
-
-// should double the capacity of the vector. The values should be copied from the old array to the new array
-
-void growVector(MyVector&);
-
-void print(MyVector&);
+void printFunc(MyVector&);
 void testCases();
 
 #endif /* MyFunc_hpp */
