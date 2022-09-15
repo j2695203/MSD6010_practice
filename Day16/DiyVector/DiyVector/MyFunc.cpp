@@ -8,11 +8,24 @@
 #include "MyFunc.hpp"
 #include <iostream>
 
+using std::cout;
+using std::endl;
+
 // constructor
 MyVector::MyVector( size_t initialCapacity){
     data = new int[initialCapacity];
     capacity = initialCapacity;
     size = 0;
+}
+
+// constructor with value
+MyVector::MyVector( size_t initialCapacity, size_t size, int arr[]){
+    data = new int[initialCapacity];
+    for(int i = 0; i < size; i++){
+        data[i] = arr[i];
+    }
+    capacity = initialCapacity;
+    this->size = size;
 }
 
 // destructor
@@ -47,6 +60,65 @@ MyVector& MyVector::operator= (const MyVector& v1){
     return *this;
 }
 
+// operator[]
+int MyVector::operator[] (int index){
+    return getValue(index);
+}
+
+// operator==
+bool MyVector::operator== (const MyVector& v1){
+    if (size != v1.getSize()){
+        return false;
+    }
+    for (int i = 0; i < size; i++){
+        if ( data[i] != v1.getValue(i)){
+            return false;
+        }
+    }
+    return true;
+}
+
+// operator!=
+bool MyVector::operator!= (const MyVector& v1){
+    return !MyVector::operator==(v1);
+}
+
+// operator<
+bool MyVector::operator< (const MyVector& v1){
+    // choose the smaller size for comparing range
+    size_t smallerSize = v1.getSize();
+    if ( size < v1.getSize()){
+        smallerSize = size;
+    }
+    // compare value
+    for (int i = 0; i < smallerSize; i++){
+        if ( data[i] < v1.getValue(i)){
+            return true;
+        }
+        else if( data[i] > v1.getValue(i)){
+            return false;
+        }
+    }
+    // if value are same, compare size
+    if (smallerSize == size){
+        return true;
+    }
+    return false;
+}
+// operator<=
+bool MyVector::operator<= (const MyVector& v1){
+    return ( MyVector::operator<(v1) || MyVector::operator==(v1));
+}
+// operator>=
+bool MyVector::operator>= (const MyVector& v1){
+    return ( !MyVector::operator<(v1) );
+}
+// operator>
+bool MyVector::operator> (const MyVector& v1){
+    return ( !MyVector::operator<=(v1));
+}
+
+
 
 void MyVector::pushBack(int dataValue){
     growVector();
@@ -59,7 +131,7 @@ void MyVector::popBack(){
 }
 
 //return the appropriate value in the vector.
-int MyVector::getValue(int index){
+int MyVector::getValue(int index)const{
     return data[index];
 }
 
@@ -153,12 +225,16 @@ void testCases(){
     assert(v2.getCapacity() == 5);
     assert(v2.getSize() == 0);
     
-    // destructor
-    if (true){
-        MyVector v3 = MyVector(5); // v3 only exist inside{}
-        std::cout<< "data position before destructor: "<< v3.getData() << std::endl;
-    }
-//    std::cout<< "data position after delete: "<< v3.getData() << std::endl;  // can't compile cause v3 doesn't exist.
+    // destructor (how to test?)
+    
+//    int* temp;
+//    if (true){
+//        MyVector v3 = MyVector(5); // v3 only exist inside{}
+//        v3.pushBack(1);
+//        std::cout<< "data position before destructor: "<< v3.getData() << std::endl;
+//        temp =v3.getData();
+//    }
+//    std::cout<< "data position after delete: "<< *temp << std::endl;  // can't compile cause v3 doesn't exist.
 
     // operator=
     // v1 = {-1,2,3,4,-1}
@@ -169,6 +245,36 @@ void testCases(){
     assert(v4.getValue(0) == -1);
     assert(v4.getValue(4) == -1);
     assert(v4.getSize() == 5);
+    
+    // operator[]
+    // make a copy and modify it, the original should remain unchanged, but the copy should reflect the changes.
+    MyVector v5(v1);
+    v5.set(0, 10);
+    // v1 = {-1,2,3,4,-1}
+    // v5 = {10,2,3,4,-1}
+    assert( v1[0] == -1);
+    assert( v5[0] == 10);
+    
+    // operator
+    
+    // v1 = {-1,2,3,4,-1}
+    // v5 = {10,2,3,4,-1}
+    int arr1[5] = {1,2,3,4,5};
+    int arr2[7] = {1,2,3,4,5,6,7};
+    int arr3[5] = {1,1,1,1,1};
+    int arr4[5] = {2,2,2,2,2};
+    MyVector v6(10,5,arr1); // {1,2,3,4,5}
+    MyVector v7(10,7,arr2); // {1,2,3,4,5,6,7};
+    MyVector v8(10,5,arr3); // {1,1,1,1,1};
+    MyVector v9(10,5,arr4); // {2,2,2,2,2};
+    assert( v6 < v7 );
+    assert( ! (v6 >= v7) );
+    assert( v6 > v8 );
+    assert( ! (v6 <= v8) );
+    assert( v6 < v9 );
+    v9 = v6; // copy {1,2,3,4,5}
+    assert( v6 == v9 );
+    
     
 
 }

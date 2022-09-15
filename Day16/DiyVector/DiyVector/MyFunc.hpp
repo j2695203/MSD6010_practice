@@ -18,16 +18,33 @@ private:
 public:
     // constructor
     MyVector(size_t initialCapacity);
+    // constructor with value
+    MyVector(size_t initialCapacity, size_t size, int arr[] );
     // destructor
     ~MyVector();
     // copy constructor
     MyVector(const MyVector& v1);
     // operator+
     MyVector& operator= (const MyVector& v1);
+    // operator[]
+    int operator[] (int index);
+    // operator==
+    bool operator== (const MyVector& v1);
+    // operator!=
+    bool operator!= (const MyVector& v1);
+    // operator<
+    bool operator< (const MyVector& v1);
+    // operator<=
+    bool operator<= (const MyVector& v1);
+    // operator>=
+    bool operator>= (const MyVector& v1);
+    // operator>
+    bool operator> (const MyVector& v1);
+    
     // methods
     void pushBack(int);
     void popBack();
-    int getValue(int index);
+    int getValue(int index)const;
     void set(int index, int newValue);
     void growVector();
     size_t getSize()const{
