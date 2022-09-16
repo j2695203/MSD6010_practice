@@ -98,15 +98,16 @@ MyVector<T>::MyVector(const MyVector& v1){
 
 // operator=
 template<typename T>
-MyVector<T>& MyVector<T>::operator= (const MyVector<T>& v1){
-    if(this == &v1 && size == v1.size && capacity == v1.capacity){
+MyVector<T>& MyVector<T>::operator= (const MyVector<T>& rhs){
+    if(this == &rhs && size == rhs.size && capacity == rhs.capacity){
         return *this;
     }
-    size = v1.size;
-    capacity = v1.capacity;
+    size = rhs.size;
+    capacity = rhs.capacity;
+//    delete [] data; // avoid leak memory
 //    data = new T[capacity];
     for(size_t i = 0; i < size; i++){
-        data[i] = v1.data[i];
+        data[i] = rhs.data[i];
     }
     return *this;
 }
@@ -119,12 +120,12 @@ T MyVector<T>::operator[] (int index){
 
 // operator==
 template<typename T>
-bool MyVector<T>::operator== (const MyVector<T>& v1){
-    if (size != v1.getSize()){
+bool MyVector<T>::operator== (const MyVector<T>& rhs){
+    if (size != rhs.getSize()){
         return false;
     }
     for (int i = 0; i < size; i++){
-        if ( data[i] != v1.getValue(i)){
+        if ( data[i] != rhs.getValue(i)){
             return false;
         }
     }
@@ -133,24 +134,24 @@ bool MyVector<T>::operator== (const MyVector<T>& v1){
 
 // operator!=
 template<typename T>
-bool MyVector<T>::operator!= (const MyVector<T>& v1){
-    return !MyVector<T>::operator==(v1);
+bool MyVector<T>::operator!= (const MyVector<T>& rhs){
+    return !MyVector<T>::operator==(rhs);
 }
 
 // operator<
 template<typename T>
-bool MyVector<T>::operator< (const MyVector<T>& v1){
+bool MyVector<T>::operator< (const MyVector<T>& rhs){
     // choose the smaller size for comparing range
-    size_t smallerSize = v1.getSize();
-    if ( size < v1.getSize()){
+    size_t smallerSize = rhs.getSize();
+    if ( size < rhs.getSize()){
         smallerSize = size;
     }
     // compare value
     for (int i = 0; i < smallerSize; i++){
-        if ( data[i] < v1.getValue(i)){
+        if ( data[i] < rhs.getValue(i)){
             return true;
         }
-        else if( data[i] > v1.getValue(i)){
+        else if( data[i] > rhs.getValue(i)){
             return false;
         }
     }
@@ -162,18 +163,18 @@ bool MyVector<T>::operator< (const MyVector<T>& v1){
 }
 // operator<=
 template<typename T>
-bool MyVector<T>::operator<= (const MyVector<T>& v1){
-    return ( MyVector<T>::operator<(v1) || MyVector<T>::operator==(v1));
+bool MyVector<T>::operator<= (const MyVector<T>& rhs){
+    return ( MyVector<T>::operator<(rhs) || MyVector<T>::operator==(rhs));
 }
 // operator>=
 template<typename T>
-bool MyVector<T>::operator>= (const MyVector<T>& v1){
-    return ( !MyVector<T>::operator<(v1) );
+bool MyVector<T>::operator>= (const MyVector<T>& rhs){
+    return ( !MyVector<T>::operator<(rhs) );
 }
 // operator>
 template<typename T>
-bool MyVector<T>::operator> (const MyVector<T>& v1){
-    return ( !MyVector<T>::operator<=(v1));
+bool MyVector<T>::operator> (const MyVector<T>& rhs){
+    return ( !MyVector<T>::operator<=(rhs));
 }
 
 
