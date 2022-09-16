@@ -80,6 +80,7 @@ MyVector<T>::~MyVector(){
     data = nullptr;
     size = 0;
     capacity = 0;
+    std::cout<< "destructor called.\n";
 }
 
 // copy constructor
