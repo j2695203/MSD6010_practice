@@ -1,0 +1,3 @@
+/Users/jinny/my6010Repo/Day18/xcode/CMakeFiles/testSFML.dir
+/Users/jinny/my6010Repo/Day18/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/jinny/my6010Repo/Day18/xcode/CMakeFiles/ZERO_CHECK.dir
